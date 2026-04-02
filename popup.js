@@ -4,10 +4,9 @@ document.getElementById('startBtn').addEventListener('click', async () => {
 
   chrome.scripting.executeScript({
     target: { 
-        tabId: tab.id, 
-        allFrames: true // Hunts down iframes
+        tabId: tab.id
     }, 
-    world: "MAIN", // Runs exactly like the developer console
+    world: "MAIN", 
     func: (targetSpeed) => {
       // Clear existing interval if you click Start multiple times
       if (window.echoSpeedInterval) clearInterval(window.echoSpeedInterval);
@@ -29,7 +28,7 @@ document.getElementById('stopBtn').addEventListener('click', async () => {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   
   chrome.scripting.executeScript({
-    target: { tabId: tab.id, allFrames: true },
+    target: { tabId: tab.id },
     world: "MAIN",
     func: () => {
       if (window.echoSpeedInterval) {
