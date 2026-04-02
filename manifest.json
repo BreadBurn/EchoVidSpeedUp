@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "EchoVideo Speed Controller",
+  "version": "1.0",
+  "description": "Forces custom video playback speed, bypassing auto-resets.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
